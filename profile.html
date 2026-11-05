@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVA - Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div>
+            <h1 class="logo">NOVA</h1>
+            <p class="greeting">Profile & Security</p>
+        </div>
+        <div class="bell-icon">⚙️</div>
+    </header>
+
+    <main class="container">
+        <!-- User Info Card -->
+        <div class="main-card">
+            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+                <div style="width: 50px; height: 50px; background-color: var(--accent-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #000; font-size: 20px;">
+                    DU
+                </div>
+                <div>
+                    <h2 class="feature-title" style="margin: 0;">Demo User</h2>
+                    <p class="feature-desc" style="margin: 4px 0 0 0;">Demo Verified Account <span style="color: var(--accent-green);">✔</span></p>
+                </div>
+            </div>
+            <div class="promo-box" style="text-align: left;">
+                <p style="margin: 0; color: var(--text-main);"><strong>Account Tier:</strong> NOVA Explorer</p>
+                <p style="margin: 4px 0 0 0; font-weight: normal;">Daily Transaction Limit: ₦50,000 (Demo)</p>
+            </div>
+        </div>
+
+        <!-- Security Card -->
+        <div class="feature-card" style="margin-bottom: 16px;">
+            <h2 class="feature-title">Security Settings</h2>
+            <p class="feature-desc">Protect your demo account.</p>
+            <div class="action-col">
+                <button id="btn-set-pin" class="btn btn-secondary btn-sm" style="text-align: left; padding: 12px;">🔒 Set Demo PIN</button>
+                <button id="btn-biometrics" class="btn btn-secondary btn-sm" style="text-align: left; padding: 12px;">👆 Enable Biometrics</button>
+            </div>
+        </div>
+
+        <!-- Support Card -->
+        <div class="feature-card" style="margin-bottom: 24px;">
+            <h2 class="feature-title">Support & About</h2>
+            <div class="action-col">
+                <button id="btn-support" class="btn btn-secondary btn-sm" style="text-align: left; padding: 12px;">💬 Contact Support</button>
+                <a href="index.html" class="btn btn-primary btn-sm" style="text-decoration: none; text-align: center; padding: 12px; margin-top: 8px;">Log Out</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+        <a href="dashboard.html" class="nav-item">Home</a>
+        <a href="#" class="nav-item">Save</a>
+        <a href="#" class="nav-item">Invest</a>
+        <a href="#" class="nav-item">Earn</a>
+        <a href="#" class="nav-item nav-active">Profile</a>
+    </nav>
+
+    <script src="profile.js"></script>
+</body>
+</html>

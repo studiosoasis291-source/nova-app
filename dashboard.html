@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVA - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div>
+            <h1 class="logo">NOVA</h1>
+            <p class="greeting">Small Beginnings. Bigger Possibilities.</p>
+        </div>
+        <div class="bell-icon">🔔</div>
+    </header>
+
+    <main class="container">
+        <!-- VIEW 1: HOME -->
+        <section id="view-home" class="app-view">
+            <div class="main-card">
+                <p class="card-label">Total available savings</p>
+                <h1 id="savings-balance" class="balance-main">₦0.00</h1>
+                <p id="milestone-text" class="milestone-text">Milestone Progress: ₦0 / ₦500</p>
+                
+                <div class="action-row">
+                    <button id="btn-deposit" class="btn btn-primary">Deposit</button>
+                    <button id="btn-withdraw" class="btn btn-secondary">Withdraw</button>
+                </div>
+            </div>
+
+            <div class="grid-dashboard">
+                <div class="feature-card">
+                    <h2 class="feature-title">INVEST</h2>
+                    <p class="feature-desc">Wealth Management</p>
+                    <h1 id="invest-balance-home" class="balance-sub">₦0.00</h1>
+                    <div class="action-col">
+                        <button id="btn-transfer" class="btn btn-secondary btn-sm">Transfer In</button>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <h2 class="feature-title">REFER</h2>
+                    <p class="feature-desc">Invite your friends to NOVA.</p>
+                    <div class="promo-box" style="margin-bottom: 12px;">
+                        <p>Get ₦3,500 per friend!</p>
+                    </div>
+                    <button id="btn-refer" class="btn btn-primary btn-sm" style="width: 100%;">Simulate Referral</button>
+                </div>
+
+                <div class="feature-card full-width">
+                    <h2 class="feature-title">NOVA EARN</h2>
+                    <p class="feature-desc" style="margin-bottom: 12px;">Discover rewards, sponsored campaigns, and surveys.</p>
+                    <button id="btn-view-earn" class="btn btn-secondary btn-sm" style="width: 100%;">View Earn Dashboard</button>
+                </div>
+            </div>
+
+            <div class="main-card" style="margin-top: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                    <h2 class="feature-title" style="margin: 0;">Transaction History</h2>
+                    <span class="badge" style="background-color: rgba(46, 204, 113, 0.1); color: #2ecc71; padding: 2px 8px; border-radius: 4px; font-size: 11px;">DEMO</span>
+                </div>
+                
+                <div id="transaction-list">
+                    <p id="empty-state" class="feature-desc" style="text-align: center; padding: 20px 0;">No transactions yet.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIEW 2: SAVE -->
+        <section id="view-save" class="app-view" style="display: none;">
+            <div class="main-card">
+                <h2 class="feature-title">NOVA SAVE</h2>
+                <p class="feature-desc" style="margin-bottom: 16px;">Build personal savings goals starting from ₦10.</p>
+                <div class="promo-box" style="margin-bottom: 16px;">
+                    <p>Current Savings Milestone: Target ₦500</p>
+                </div>
+                <p class="feature-desc">Instant access to your core savings balance with zero maintenance fees in demo mode.</p>
+            </div>
+        </section>
+
+        <!-- VIEW 3: INVEST (UPGRADED PORTFOLIO DASHBOARD) -->
+        <section id="view-invest" class="app-view" style="display: none;">
+            <!-- Portfolio Summary -->
+            <div class="main-card" style="margin-bottom: 20px;">
+                <p class="card-label">Total Portfolio Value</p>
+                <h1 id="portfolio-total" class="balance-main">₦0.00</h1>
+                <p id="portfolio-profit" style="color: #2ecc71; font-weight: bold; margin-top: 4px;">+₦0.00 (0.00%)</p>
+                <p style="color: var(--text-muted); font-size: 12px; margin-top: 8px;">Available Cash to Invest: <strong id="invest-cash">₦0.00</strong></p>
+                
+                <div class="action-row" style="margin-top: 16px;">
+                    <button id="btn-invest-transfer" class="btn btn-secondary btn-sm">Fund Portfolio</button>
+                    <button id="btn-ai-advisor" class="btn btn-primary btn-sm">Ask AI Advisor</button>
+                </div>
+            </div>
+
+            <!-- Marketplace -->
+            <div class="feature-card" style="margin-bottom: 20px;">
+                <h2 class="feature-title">Marketplace (Demo)</h2>
+                <p class="feature-desc">Select an asset to simulate a purchase.</p>
+                <div id="asset-list" style="margin-top: 12px;">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+            
+            <!-- My Holdings -->
+            <div class="feature-card">
+                <h2 class="feature-title">My Asset Allocation</h2>
+                <div id="holdings-list" style="margin-top: 12px;">
+                    <p class="feature-desc" style="text-align: center; padding: 10px 0;">No assets purchased yet.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIEW 4: EARN -->
+        <section id="view-earn" class="app-view" style="display: none;">
+            <div class="main-card">
+                <h2 class="feature-title">NOVA EARN</h2>
+                <p class="feature-desc" style="margin-bottom: 16px;">Referral rewards & sponsored campaigns.</p>
+                <div class="promo-box">
+                    <p>Pending Rewards: ₦0.00</p>
+                    <p style="margin-top: 6px;">Approved Rewards: ₦0.00</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- AI Advisor Modal -->
+    <div id="ai-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <h2 class="feature-title" style="color: #f39c12;">NOVA AI Advisor</h2>
+            <p class="feature-desc" style="margin-bottom: 16px;">I can explain concepts, risks, and diversification. I cannot guarantee returns or predict the future.</p>
+            <div style="background: #070d0a; padding: 12px; border-radius: 8px; font-size: 13px; color: #2ecc71; margin-bottom: 16px; border: 1px solid #1c3627;">
+                <strong>Educational Tip:</strong> Diversification means spreading your money across different asset classes (like Stocks and Bonds) to reduce financial risk if one market drops.
+            </div>
+            <button id="btn-close-ai" class="btn btn-secondary" style="width: 100%;">Close</button>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+        <button class="nav-item nav-active" data-target="view-home">Home</button>
+        <button class="nav-item" data-target="view-save">Save</button>
+        <button class="nav-item" data-target="view-invest">Invest</button>
+        <button class="nav-item" data-target="view-earn">Earn</button>
+        <a href="profile.html" class="nav-item" style="text-decoration: none;">Profile</a>
+    </nav>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
